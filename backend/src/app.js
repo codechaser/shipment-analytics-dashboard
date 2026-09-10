@@ -20,6 +20,13 @@ app.use(cors({
 }));
 app.use(express.json());
 
+app.get('/', (request, response) => {
+  response.json({
+    success: true,
+    message: 'Shipment Analytics API is running'
+  });
+});
+
 app.get('/health', (request, response) => {
   response.json({ success: true, status: 'ok' });
 });
